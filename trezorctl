@@ -196,13 +196,6 @@ class Commands(object):
         if not nonce:
             nonce = eth.eth_getTransactionCount(address)
 
-        print('from', address)
-        print('to', args.to)
-        print('value', value, 'wei')
-        print('gas_price', gas_price, 'wei')
-        print('gas_limit', gas_limit, 'gas')
-        print('nonce', nonce)
-
         sig = self.client.ethereum_sign_tx(
             n=address_n,
             nonce=nonce,
